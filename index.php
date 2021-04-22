@@ -57,9 +57,12 @@
               $uname    = $_POST['uname'];
               $password = $_POST['password'];
 
+              $hassedpass = sha1($password);
+
+
               //Insert data into database
 
-              $sql = "INSERT INTO users(`fname`, `lname`, `email`, `uname`, `password`, `joindate`) VALUES ('$fname','$lname','$email','$uname','$password',now())";
+              $sql = "INSERT INTO users(`fname`, `lname`, `email`, `uname`, `password`, `joindate`) VALUES ('$fname','$lname','$email','$uname','$hassedpass',now())";
               
               $register= mysqli_query($db,$sql);
             }
