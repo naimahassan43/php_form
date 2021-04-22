@@ -4,7 +4,8 @@
     <div class="row">
       <div class="col-lg-12 table-responsive">
         <h3 class="m-3"> All Users List</h3>
-        <table class=" table table-striped table-bordered table-hover">
+
+        <table id="example" class=" table table-striped table-bordered table-hover">
           <thead class="table-dark">
             <tr>
               <th scope="col">#Sl</th>
@@ -20,7 +21,7 @@
             <!-- Read data from database -->
             <?php 
               
-              $sql = "SELECT * FROM users";
+              $sql = "SELECT * FROM users ORDER BY id DESC";
               $allUsers = mysqli_query($db,$sql);
 
               $i=0;
@@ -43,7 +44,7 @@
               <td><?php echo $joindate;?></td>
               <td>
                 <div class="btn-group">
-                  <a href="updateUsers.php?update=<?php echo $id;?>" class="btn btn-success btn-sm">Update</a>
+                  <a href="../updateUsers.php?update=<?php echo $id;?>" class="btn btn-success btn-sm">Update</a>
                   <a href="" class="btn btn-danger btn-sm" data-bs-toggle="modal"
                     data-bs-target="#deleteUser<?php echo $id; ?>">Delete</a>
                 </div>
