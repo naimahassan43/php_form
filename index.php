@@ -46,6 +46,13 @@
               $sql = "INSERT INTO users(`fname`, `lname`, `email`, `uname`, `password`, `joindate`) VALUES ('$fname','$lname','$email','$uname','$hassedpass',now())";
               
               $register= mysqli_query($db,$sql);
+
+              if('register'){
+                header('Location: allUsers.php');
+              }
+              else{
+                die("Mysql connection error" . mysqli_error($db));
+              }
             }
         ?>
       </div>
