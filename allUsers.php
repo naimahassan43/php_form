@@ -34,7 +34,7 @@
               </tr>
             </thead>
             <tbody>
-              //Read data from database
+              <!-- Read data from database -->
               <?php 
               
               $sql = "SELECT * FROM users";
@@ -42,11 +42,11 @@
 
               $i=0;
               while($row = mysqli_fetch_assoc($allUsers)){
-                
+                $id       = $row['id'];
                 $fname    = $row['fname'];
                 $lname    = $row['lname'];
-                $email    = $row['email'];
                 $uname    = $row['uname'];
+                $email    = $row['email'];
                 $joindate = $row['joindate'];	
                 $i++;
                 ?>
@@ -54,12 +54,13 @@
                 <th scope="row"><?php echo $i;?></th>
                 <td><?php echo $fname;?></td>
                 <td><?php echo $lname;?></td>
-                <td><?php echo $email;?></td>
                 <td><?php echo $uname;?></td>
+                <td><?php echo $email;?></td>
+
                 <td><?php echo $joindate;?></td>
                 <td>
                   <div class="btn-group">
-                    <a href="" class="btn btn-success btn-sm">Update</a>
+                    <a href="../updateUsers.php?update=<?php echo $id;?>" class="btn btn-success btn-sm">Update</a>
                     <a href="" class="btn btn-danger btn-sm">Delete</a>
                   </div>
                 </td>
@@ -84,7 +85,7 @@
 
   <!--  Separate Popper and Bootstrap JS -->
 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+  <script src=" https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
     integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous">
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
