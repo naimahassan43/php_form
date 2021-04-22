@@ -32,12 +32,12 @@
         <?php
             if(isset($_POST['register'])){
              
-              $fname    = $_POST['fname'];
-              $lname    = $_POST['lname'];
-              $email    = $_POST['email'];
-              $uname    = $_POST['uname'];
-              $password = $_POST['password'];
-
+              $fname       = mysqli_real_escape_string($db, $_POST['fname']);
+              $lname       = mysqli_real_escape_string($db, $_POST['lname']);
+              $email       = mysqli_real_escape_string($db, $_POST['email']);
+              $uname       = mysqli_real_escape_string($db, $_POST['uname']);
+              $password    = mysqli_real_escape_string($db, $_POST['password']);
+              
               $hassedpass = sha1($password);
 
 
